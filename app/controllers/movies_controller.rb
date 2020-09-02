@@ -17,7 +17,20 @@ class MoviesController < ApplicationController
   def create
     movie = Movie.create(movie_params)
 
-    redirect_to "/movies/#{movie.id}", locals: { movie: movie }
+    redirect_to "/movies/#{movie.id}"
+  end
+
+  def edit
+    movie = Movie.find(params[:id])
+
+    render locals: { movie: movie }
+  end
+
+  def update
+    movie = Movie.find(params[:id])
+    movie.update(movie_params)
+
+    redirect_to "/movies/#{movie.id}"
   end
 
   private
