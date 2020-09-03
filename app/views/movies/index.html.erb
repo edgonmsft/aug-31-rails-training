@@ -1,0 +1,6 @@
+<%= button_to "Add New Movie", "/movies/new", method: :get %>
+
+<% movies.each do |movie| %>
+  <%= movie.title %>
+  <%= movie.director %>
+<% end %>

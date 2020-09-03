@@ -1,2 +1,5 @@
-<h3><%= title %></h3>
-<h4><%= director %></h4>
+<h3><%= movie.title %></h3>
+<h4><%= movie.director %></h4>
+<h4><%= movie.year %></h4>
+
+<%= button_to "Edit #{movie.title}", "/movies/#{movie.id}/edit", method: :get %>
